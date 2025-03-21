@@ -1,0 +1,68 @@
+#include<iostream.h>
+#include<conio.h>
+#include<iomanip.h>
+class product
+{
+protected:
+int p_id;
+char p_name[20];
+float price;
+public:
+void getdata()
+{
+cout<<"Enter product id"<<endl;
+cin>>p_id;
+cout<<"Enter product name"<<endl;
+cin >>p_name;
+cout<<"Enetr product price"<<endl;
+cin>>price;
+}
+void putdata()
+{
+cout<<"product id"<<p_id<<endl;
+cout<<"product name"<<p_name<<endl;
+cout<<"product pricr"<<price<<endl;
+}
+};
+
+class discount : public product
+{
+protected:
+int i;
+float dis;
+float dis_amt,amt;
+public:
+void accept()
+{
+for(i=0;i<2;i++)
+{
+getdata();
+cout<<"enter discount in percentage"<<endl;
+cin>>dis;
+//cout<<"discount"<<dis;
+dis_amt=price*(dis/100);
+//cout<<"Toatl Amount of discount"<<dis_amt<<endl;
+amt=price-dis_amt;
+cout<<"Total price of product after discount"<<setw(2)<<amt<<endl;
+}
+}
+};
+
+void main()
+{
+
+//cout<<"enetr no of product";
+//cin>>n;
+discount d;
+clrscr();
+
+
+d.accept();
+//d.calculate();
+
+getch();
+}
+
+
+
+
